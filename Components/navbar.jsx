@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // Ganti data di bawah ini sesuai kebutuhan sekolahmu
+// href dengan "/#..." = section di halaman utama (bisa diklik dari halaman mana pun)
+// href tanpa hash = halaman terpisah
 const NAV_LINKS = [
-    { label: "Beranda", href: "#beranda" },
-    { label: "Profil Sekolah", href: "#profil" },
-    { label: "Akademik", href: "#akademik" },
-    { label: "Ekstrakurikuler", href: "#ekstrakurikuler" },
-    { label: "Berita", href: "#berita" },
-    { label: "Kontak", href: "#kontak" },
+    { label: "Beranda", href: "/#beranda" },
+    { label: "Profil Sekolah", href: "/#profil" },
+    { label: "Akademik", href: "/#akademik" },
+    { label: "Ekstrakurikuler", href: "/#ekstrakurikuler" },
+    { label: "Berita", href: "/#berita" },
+    { label: "Kontak", href: "/kontak" },
 ];
 
 export default function Navbar({
@@ -34,6 +37,14 @@ export default function Navbar({
 
     const closeMenu = () => setIsOpen(false);
 
+    // Semua link pakai <Link> supaya tetap jalan walau lagi di halaman lain
+    // (mis. klik "Beranda" saat sedang di /kontak akan pindah ke "/" lalu scroll ke section)
+    const renderLink = (link, className) => (
+        <Link key={link.href} to={link.href} onClick={closeMenu} className={className}>
+            {link.label}
+        </Link>
+    );
+
     return (
         <header
             className={`sticky top-0 z-50 w-full transition-colors duration-300 ${isScrolled ? "bg-[#0c2338] shadow-lg shadow-black/20" : "bg-[#0f2a43]"
@@ -41,8 +52,8 @@ export default function Navbar({
         >
             <div className="mx-auto flex h-[72px] max-w-6xl items-center gap-6 px-6">
                 {/* Logo & Nama Sekolah */}
-                <a
-                    href="#beranda"
+                <Link
+                    to="/"
                     onClick={closeMenu}
                     className="mr-auto flex min-w-0 items-center gap-3 text-[#f4f1ea] no-underline"
                 >
@@ -65,19 +76,16 @@ export default function Navbar({
                         </span>
                     )}
                     <span className="truncate font-serif text-lg font-semibold">{schoolName}</span>
-                </a>
+                </Link>
 
                 {/* Menu Navigasi Desktop */}
                 <nav aria-label="Menu utama" className="hidden gap-7 md:flex">
-                    {NAV_LINKS.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            className="whitespace-nowrap border-b-2 border-transparent py-2 text-sm font-medium text-[#b9c4d0] no-underline transition-colors hover:border-[#e8a33d] hover:text-[#f4f1ea]"
-                        >
-                            {link.label}
-                        </a>
-                    ))}
+                    {NAV_LINKS.map((link) =>
+                        renderLink(
+                            link,
+                            "whitespace-nowrap border-b-2 border-transparent py-2 text-sm font-medium text-[#b9c4d0] no-underline transition-colors hover:border-[#e8a33d] hover:text-[#f4f1ea]"
+                        )
+                    )}
                 </nav>
 
                 <a
@@ -115,16 +123,12 @@ export default function Navbar({
                 className={`flex flex-col overflow-hidden bg-[#0c2338] transition-[max-height] duration-300 md:hidden ${isOpen ? "max-h-[480px]" : "max-h-0"
                     }`}
             >
-                {NAV_LINKS.map((link) => (
-                    <a
-                        key={link.href}
-                        href={link.href}
-                        onClick={closeMenu}
-                        className="border-t border-white/10 px-6 py-3.5 text-base text-[#f4f1ea] no-underline"
-                    >
-                        {link.label}
-                    </a>
-                ))}
+                {NAV_LINKS.map((link) =>
+                    renderLink(
+                        link,
+                        "border-t border-white/10 px-6 py-3.5 text-base text-[#f4f1ea] no-underline"
+                    )
+                )}
                 <a
                     href="#ppdb"
                     onClick={closeMenu}
