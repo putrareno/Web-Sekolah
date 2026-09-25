@@ -1,50 +1,62 @@
 export default function About() {
-  const links = [
-    { label: "Email", href: "mailto:nama@email.com" },
-    { label: "GitHub", href: "https://github.com/username" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/username" },
+  const highlights = [
+    { label: "Berdiri sejak", value: "1998" },
+    { label: "Akreditasi", value: "A" },
+    { label: "Guru & staf", value: "85+" },
+    { label: "Program studi", value: "3 Jurusan" },
   ];
 
   return (
-    <section className="min-h-screen bg-neutral-50 text-neutral-900 flex items-center justify-center px-6">
-      <div className="max-w-xl w-full py-24">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-10 h-10 rounded-full bg-neutral-900 shrink-0" />
-          <p className="text-sm text-neutral-500">Tentang saya</p>
+    <section className="bg-[#0B1D3A] text-white px-6 py-24">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        {/* Kolom kiri: teks */}
+        <div>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="h-px w-8 bg-[#F5A623]" />
+            <p className="text-sm tracking-wide text-[#F5A623]">
+              Tentang Sekolah
+            </p>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl font-semibold leading-snug tracking-tight mb-6">
+            Membentuk generasi unggul yang siap menghadapi masa depan.
+          </h1>
+
+          <div className="space-y-4 mb-10 text-white/70 leading-relaxed">
+            <p>
+              SMA Negeri Harapan Bangsa berdiri sejak 1998 sebagai lembaga
+              pendidikan menengah yang berkomitmen mencetak lulusan
+              berprestasi, berkarakter, dan siap bersaing baik di tingkat
+              nasional maupun internasional.
+            </p>
+            <p>
+              Dengan dukungan tenaga pendidik berpengalaman dan fasilitas
+              belajar yang lengkap, kami mendorong setiap siswa untuk
+              mengembangkan potensi akademik, minat, dan bakatnya secara
+              maksimal.
+            </p>
+          </div>
+
+          <a
+            href="#profil"
+            className="inline-flex items-center gap-2 bg-[#F5A623] text-[#0B1D3A] font-medium text-sm px-5 py-3 rounded-full hover:bg-[#e6981a] transition-colors"
+          >
+            Selengkapnya tentang kami
+          </a>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-medium leading-snug tracking-tight mb-6 text-neutral-900">
-          Saya membangun produk digital dengan perhatian pada detail dan
-          kesederhanaan.
-        </h1>
-
-        <div className="space-y-4 mb-10">
-          <p className="text-neutral-600 leading-relaxed">
-            Nama saya [Nama Anda], seorang [profesi/peran] yang fokus pada
-            [bidang keahlian, mis. pengembangan web, desain produk, atau data].
-            Saya percaya solusi terbaik biasanya yang paling sederhana.
-          </p>
-
-          <p className="text-neutral-600 leading-relaxed">
-            Saat ini saya sedang mengerjakan [proyek/hal yang sedang
-            dikerjakan]. Di luar itu, saya senang [hobi atau minat singkat].
-          </p>
-        </div>
-
-        <div className="h-px bg-neutral-200 mb-8" />
-
-        <div className="flex flex-wrap gap-x-6 gap-y-3">
-          {links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="group inline-flex items-center gap-1 text-sm font-medium text-neutral-800 hover:text-neutral-950 transition-colors"
+        {/* Kolom kanan: kartu statistik */}
+        <div className="grid grid-cols-2 gap-4">
+          {highlights.map((item) => (
+            <div
+              key={item.label}
+              className="bg-white/5 border border-white/10 rounded-2xl px-6 py-8 text-center hover:bg-white/10 transition-colors"
             >
-              {link.label}
-              <span className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                ↗
-              </span>
-            </a>
+              <p className="text-3xl font-semibold text-[#F5A623] mb-1">
+                {item.value}
+              </p>
+              <p className="text-sm text-white/60">{item.label}</p>
+            </div>
           ))}
         </div>
       </div>
