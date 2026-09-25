@@ -71,8 +71,17 @@ const prestasi = [
 
 export default function AcademicPage() {
   return (
-    <section className="bg-[#0F2A4D] text-[#F6F1E4]">
-      <div className="mx-auto max-w-6xl px-6 py-20 lg:px-12 lg:py-28">
+    <section className="relative overflow-hidden scroll-mt-[72px] bg-[#112445] text-[#F6F1E4]">
+      {/* tekstur titik halus, sama seperti hero */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage: "radial-gradient(#F6F1E4 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-6xl px-6 py-20 lg:px-12 lg:py-28">
         {/* Header */}
         <div className="max-w-2xl">
           <span className="inline-flex items-center rounded-full border border-[#D9A441]/40 px-4 py-1.5 text-sm text-[#D9A441]">
