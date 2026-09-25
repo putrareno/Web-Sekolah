@@ -1,6 +1,10 @@
+
+
+import gedungSekolah from "../src/assets/sekolah.jpg";
+
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[#122A1E] text-[#F6F1E4]">
+    <section className="relative overflow-hidden bg-[#0F2A4D] text-[#F6F1E4]">
       {/* tekstur titik halus, kesan kertas ijazah */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -18,25 +22,25 @@ export default function HeroSection() {
           </span>
 
           <h1 className="mt-6 font-serif text-4xl leading-[1.15] tracking-tight sm:text-5xl lg:text-[3.4rem]">
-            Tempat rasa ingin tahu tumbuh menjadi kesiapan menghadapi dunia.
+            Belajar santuy, prestasi tetap juara.
           </h1>
 
           <p className="mt-6 text-lg leading-relaxed text-[#F6F1E4]/75">
-            SMA Cendekia Bangsa membimbing setiap siswa untuk berpikir kritis,
-            berkarya dengan percaya diri, dan siap melangkah ke jenjang
-            pendidikan maupun karier pilihannya.
+            SMA Negeri Harapan Bangsa membimbing setiap siswa untuk berpikir
+            kritis, berkarya dengan percaya diri, dan siap melangkah ke
+            jenjang pendidikan maupun karier pilihannya.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
               href="#pendaftaran"
-              className="inline-flex items-center justify-center rounded-md bg-[#D9A441] px-7 py-3.5 font-medium text-[#122A1E] transition hover:bg-[#e3b563] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A441] focus-visible:ring-offset-2 focus-visible:ring-offset-[#122A1E]"
+              className="inline-flex items-center justify-center rounded-md bg-[#D9A441] px-7 py-3.5 font-medium text-[#0F2A4D] transition hover:bg-[#e3b563] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A441] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0F2A4D]"
             >
               Daftar sebagai siswa baru
             </a>
             <a
               href="#program"
-              className="inline-flex items-center justify-center rounded-md border border-[#F6F1E4]/25 px-7 py-3.5 font-medium text-[#F6F1E4] transition hover:border-[#F6F1E4]/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F6F1E4]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#122A1E]"
+              className="inline-flex items-center justify-center rounded-md border border-[#F6F1E4]/25 px-7 py-3.5 font-medium text-[#F6F1E4] transition hover:border-[#F6F1E4]/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F6F1E4]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0F2A4D]"
             >
               Lihat program akademik
             </a>
@@ -59,18 +63,21 @@ export default function HeroSection() {
           </dl>
         </div>
 
-        {/* Kolom kanan: lambang visual sederhana */}
+        {/* Kolom kanan: foto sekolah */}
         <div className="relative mx-auto flex h-80 w-80 items-center justify-center sm:h-96 sm:w-96">
           <div className="absolute inset-0 rounded-full border border-[#D9A441]/25" />
           <div className="absolute inset-6 rounded-full border border-[#D9A441]/15" />
-          <div className="absolute inset-14 flex items-center justify-center rounded-full bg-[#0E2117]">
-            <span className="font-serif text-7xl text-[#D9A441]">CB</span>
-          </div>
+
+          <img
+            src={gedungSekolah}
+            alt="Gedung SMA Negeri Harapan Bangsa"
+            className="absolute inset-14 h-52 w-52 rounded-full object-cover sm:h-64 sm:w-64"
+          />
 
           {/* kartu prestasi mengambang */}
-          <div className="absolute -bottom-4 left-1/2 w-64 -translate-x-1/2 rounded-lg bg-[#F6F1E4] px-5 py-4 text-[#122A1E] shadow-xl sm:left-auto sm:right-0 sm:translate-x-0">
+          <div className="absolute -bottom-4 left-1/2 w-64 -translate-x-1/2 rounded-lg bg-[#F6F1E4] px-5 py-4 text-[#0F2A4D] shadow-xl sm:left-auto sm:right-0 sm:translate-x-0">
             <p className="text-sm font-medium">Juara 1 Olimpiade Sains Nasional</p>
-            <p className="mt-0.5 text-xs text-[#122A1E]/60">Tim Kimia · 2026</p>
+            <p className="mt-0.5 text-xs text-[#0F2A4D]/60">Tim Kimia · 2026</p>
           </div>
         </div>
       </div>
