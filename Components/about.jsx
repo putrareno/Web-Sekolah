@@ -14,7 +14,8 @@ export default function About() {
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-medium leading-snug tracking-tight mb-6 text-neutral-900">
-          Saya membangun produk digital dengan perhatian pada detail dan kesederhanaan.
+          Saya membangun produk digital dengan perhatian pada detail dan
+          kesederhanaan.
         </h1>
 
         <div className="space-y-4 mb-10">
@@ -25,8 +26,8 @@ export default function About() {
           </p>
 
           <p className="text-neutral-600 leading-relaxed">
-            Saat ini saya sedang mengerjakan [proyek/hal yang sedang dikerjakan].
-            Di luar itu, saya senang [hobi atau minat singkat].
+            Saat ini saya sedang mengerjakan [proyek/hal yang sedang
+            dikerjakan]. Di luar itu, saya senang [hobi atau minat singkat].
           </p>
         </div>
 
