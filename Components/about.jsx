@@ -7,14 +7,16 @@ export default function About() {
   ];
 
   return (
-    <section className="bg-[#0B1D3A] text-white px-6 py-24">
+    <section
+      id="profil"
+      className="bg-[#0B1D3A] text-white px-6 py-24">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Kolom kiri: teks */}
         <div>
           <div className="flex items-center gap-3 mb-6">
             <span className="h-px w-8 bg-[#F5A623]" />
             <p className="text-sm tracking-wide text-[#F5A623]">
-              Tentang Sekolah
+              Profil Sekolah
             </p>
           </div>
 
