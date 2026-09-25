@@ -4,7 +4,12 @@ import gedungSekolah from "../src/assets/sekolah.jpg";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[#0F2A4D] text-[#F6F1E4]">
+
+
+
+    <section
+      id="beranda"
+      className="relative overflow-hidden scroll-mt-[72px] bg-[#112445] text-[#F6F1E4]">
       {/* tekstur titik halus, kesan kertas ijazah */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
