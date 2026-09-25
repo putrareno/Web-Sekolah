@@ -1,8 +1,14 @@
+import Navbar from "./Components/navbar";
+import Hero from "./Components/hero";
+import Footer from "./Components/footer";
+
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-500">
-      <h1 className="text-4xl font-bold text-white">Tailwind Berhasil! 🎉</h1>
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <Footer />
+    </>
   );
 }
 
